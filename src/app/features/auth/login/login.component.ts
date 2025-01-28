@@ -24,18 +24,27 @@ export class LoginComponent {
     });
   }
 
-  login() {
+  async login() {
     const { email, password } = this.loginForm.value;
-
-    this.auth.login(email, password).subscribe({
-      next: () => {
-        console.log('Login bem-sucedido!');
-        this.router.navigate(['/home']);
-      },
-      error: (err) => {
-        console.error('Erro ao fazer login:', err);
+  
+    try {
+      await this.auth.login(email, password);
+      console.log('Login bem-sucedido!');
+      this.router.navigate(['/home']);
+    } catch (err: unknown) {
+      // Verificação de tipo para garantir que 'err' seja um Error
+      if (err instanceof Error) {
+        console.error('Erro ao fazer login:', err.message);
         alert('Erro ao fazer login: ' + (err.message || 'Verifique suas credenciais.'));
+      } else {
+        console.error('Erro desconhecido:', err);
+        alert('Erro desconhecido ao tentar fazer login.');
       }
-    });
+    }
   }
+
+  loginWithGoogle() {
+    this.auth.loginWithGoogle();
+  }
+  
 }
