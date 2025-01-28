@@ -1,0 +1,92 @@
+.termo-container {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f1f1f1, #f9f9f9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .termo-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Permite rolagem vertical */
+    max-height: 500px; /* Limita a altura máxima do card */
+    padding: 20px;
+  }
+  
+  .termo-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+  }
+  
+  .termo-header h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .line {
+    width: 100px;
+    height: 2px;
+    background-color: #4CAF50;
+    margin: 10px auto;
+  }
+  
+  .termo-content {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .termo-section {
+    margin-bottom: 20px;
+  }
+  
+  .termo-section h2 {
+    font-size: 22px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+  
+  .termo-section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .accept-button, .close-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .accept-button {
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accept-button:hover {
+    background-color: #45a049;
+  }
+  
+  .close-button {
+    background-color: #f44336;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #d32f2f;
+  }
+  
