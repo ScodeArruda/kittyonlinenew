@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+/* Zerando margens e padding de todos os elementos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* Garante que o padding e a borda não alterem o tamanho do elemento */
+}
+
+/* Remove a borda de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ajusta a exibição de imagens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove o comportamento padrão de listas */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove bordas e as cores de fundo de formulários */
+input, button, select, textarea {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Ajuste de fontes padrões */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* Garanta que o html e body ocupem a tela toda */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
