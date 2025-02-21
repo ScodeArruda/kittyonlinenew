@@ -1,0 +1,92 @@
+// .modal-container {
+//     padding: 20px;
+//     text-align: center;
+//     max-width: 400px;
+  
+//     h2 {
+//       margin-bottom: 10px;
+//     }
+  
+//     p {
+//       font-size: 14px;
+//       color: #666;
+//       margin-bottom: 20px;
+//     }
+  
+//     mat-form-field {
+//       width: 100%;
+//       margin-bottom: 15px;
+//     }
+  
+//     mat-checkbox {
+//       display: block;
+//       margin-bottom: 15px;
+//     }
+  
+//     button {
+//       width: 100%;
+//     }
+//   }
+  
+.modal-container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  
+    /* Centralização na tela */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  
+    /* Títulos */
+    h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #333333;
+    }
+  
+    /* Parágrafo */
+    p {
+      font-size: 16px;
+      color: #666666;
+    }
+  
+    /* Campos de entrada */
+    mat-form-field {
+      width: 100%;
+    }
+  
+    /* Checkbox */
+    mat-checkbox {
+      margin: 12px 0;
+    }
+  
+    /* Botão */
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  
+  /* Adicionando um fundo semitransparente para o modal */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Certifique-se de que o modal tenha um z-index maior */
+  }
+  
+  

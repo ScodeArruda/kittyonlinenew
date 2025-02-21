@@ -1,0 +1,42 @@
+<div class="dados-user-container">
+    <h2>Meus Dados</h2>
+    <div class="user-details" *ngIf="userData?.nome || isGoogleLogin; else loading">
+        <p *ngIf="userData?.nome"><strong>Nome:</strong> {{ userData?.nome }} {{ userData?.sobrenome }}</p>
+        
+        <p *ngIf="isGoogleLogin && userData?.email"><strong>Email do Google:</strong> {{ emailUsuario }}</p>
+
+        <p *ngIf="!isGoogleLogin && userData?.email"><strong>Email cadastrado:</strong> {{ userData?.email }}</p>
+
+        <p *ngIf="!isGoogleLogin && userData?.cpf"><strong>CPF: </strong>
+            <input class="ImputCpf" [mask]="'000.000.000-00'" [(ngModel)]="userData.cpf" />
+        </p>
+        <p *ngIf="isGoogleLogin && userData?.cpf"><strong>CPF: </strong>
+            <input class="ImputCpf" [mask]="'000.000.000-00'" [(ngModel)]="userData.cpf" />
+        </p>
+    </div>
+
+    <div class="button-container">
+        <!-- Botão para editar dados -->
+        <!-- <button *ngIf="userData?.nome" class="btn edit-btn" (click)="openEditModal()">Editar Dados</button> -->
+        <!-- Botão para deletar conta -->
+        <button class="btn delete-btn" (click)="openDeleteModal()">Deletar Conta</button>
+    </div>
+
+    <!-- Modal de edição -->
+    <!-- <div *ngIf="isEditing" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Editar Dados</h3>
+            <label for="nome">Nome:</label>
+            <input id="nome" [(ngModel)]="editData.nome" placeholder="Novo Nome" />
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input id="sobrenome" [(ngModel)]="editData.sobrenome" placeholder="Novo Sobrenome" />
+
+            <button class="btn save-btn" (click)="updateUser()">Salvar</button>
+            <button class="btn cancel-btn" (click)="closeEditModal()">Cancelar</button>
+        </div>
+    </div> -->
+</div>
+<ng-template #loading>
+    <p>Carregando dados...</p>
+</ng-template>

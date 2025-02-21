@@ -1,0 +1,256 @@
+.dados-user-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+
+  h2 {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .user-details {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #ffffff;
+
+    p {
+      margin: 10px 0;
+    }
+
+    .ImputCpf {
+      color: #ffffff;
+      font-size: 16px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &.edit-btn {
+        background: linear-gradient(120deg, #0b9d0b, #450a84, #0b9d0b);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        width: 48%;
+        margin: 5px 1%;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        /* Para garantir que o gradiente não saia dos limites do botão */
+        transition: color 0.3s ease;
+
+        /* Gradiente inicial com posição */
+        background-size: 200% 200%;
+        /* Define o tamanho do gradiente */
+        background-position: 0% 50%;
+        /* Inicia a posição do gradiente */
+
+        &:hover {
+          background-position: 100% 50%;
+          /* Muda a posição para criar o movimento */
+          transition: background-position 1s ease;
+          /* Controle da transição da posição */
+        }
+
+        /* Opcional: muda a cor do texto ao passar o mouse */
+        &:hover {
+          color: #ffffff;
+          /* Cor de texto ao passar o mouse */
+        }
+      }
+
+      &.delete-btn {
+        background: linear-gradient(120deg, #bb0303, #e26e6e, #bb0303);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        width: 48%;
+        margin: 5px 1%;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        /* Para garantir que o gradiente não saia dos limites do botão */
+        transition: color 0.3s ease;
+
+        /* Gradiente inicial com posição */
+        background-size: 200% 200%;
+        /* Define o tamanho do gradiente */
+        background-position: 0% 50%;
+        /* Inicia a posição do gradiente */
+
+        &:hover {
+          background-position: 100% 50%;
+          /* Muda a posição para criar o movimento */
+          transition: background-position 1s ease;
+          /* Controle da transição da posição */
+        }
+
+        /* Opcional: muda a cor do texto ao passar o mouse */
+        &:hover {
+          color: #ffffff;
+          /* Cor de texto ao passar o mouse */
+        }
+      }
+
+      &.save-btn {
+        background-color: #2196F3;
+        color: white;
+
+        &:hover {
+          background-color: #1e88e5;
+        }
+      }
+
+      &.cancel-btn {
+        background-color: #9e9e9e;
+        color: white;
+
+        &:hover {
+          background-color: #757575;
+        }
+      }
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: #2575fc;
+          outline: none;
+        }
+      }
+
+      .save-btn {
+        background: linear-gradient(120deg, #0b9d0b, #450a84, #0b9d0b);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        width: 48%;
+        margin: 5px 1%;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        /* Para garantir que o gradiente não saia dos limites do botão */
+        transition: color 0.3s ease;
+
+        /* Gradiente inicial com posição */
+        background-size: 200% 200%;
+        /* Define o tamanho do gradiente */
+        background-position: 0% 50%;
+        /* Inicia a posição do gradiente */
+
+        &:hover {
+          background-position: 100% 50%;
+          /* Muda a posição para criar o movimento */
+          transition: background-position 1s ease;
+          /* Controle da transição da posição */
+        }
+
+        /* Opcional: muda a cor do texto ao passar o mouse */
+        &:hover {
+          color: #ffffff;
+          /* Cor de texto ao passar o mouse */
+        }
+      }
+
+      .cancel-btn {
+        background: linear-gradient(135deg, #b40303, #e66b6b, #b40303);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        width: 48%;
+        margin: 5px 1%;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        /* Para garantir que o gradiente não saia dos limites do botão */
+        transition: color 0.3s ease;
+
+        /* Gradiente inicial com posição */
+        background-size: 200% 200%;
+        /* Define o tamanho do gradiente */
+        background-position: 0% 50%;
+        /* Inicia a posição do gradiente */
+
+        &:hover {
+          background-position: 100% 50%;
+          /* Muda a posição para criar o movimento */
+          transition: background-position 1s ease;
+          /* Controle da transição da posição */
+        }
+
+        /* Opcional: muda a cor do texto ao passar o mouse */
+        &:hover {
+          color: #ffffff;
+          /* Cor de texto ao passar o mouse */
+        }
+      }
+    }
+  }
+}

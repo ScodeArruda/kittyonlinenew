@@ -8,6 +8,7 @@ import { provideDatabase, getDatabase } from '@angular/fire/database'; // Import
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'; // Firestore, caso seja necessário
 import { provideStorage, getStorage } from '@angular/fire/storage'; // Storage, caso precise de upload de arquivos
 import { environment } from '../environments/environment';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // Configuração do Firebase
 // const firebaseConfig = {
@@ -30,6 +31,8 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()), // Configuração do Firebase Authentication
     provideDatabase(() => getDatabase()), // Configuração do Realtime Database
     provideFirestore(() => getFirestore()), // Configuração opcional do Firestore
-    provideStorage(() => getStorage()), // Configuração opcional para Storage
+    provideStorage(() => getStorage()), provideAnimationsAsync(), // Configuração opcional para Storage
+    // Angular Animations
+    provideAnimationsAsync(),
   ],
 };

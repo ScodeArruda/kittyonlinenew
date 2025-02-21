@@ -1,104 +1,97 @@
-/* Estilo global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Garante que a página ocupe 100% da altura da tela */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .auth-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        padding: 2rem 3rem;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        height: 500px;
+        /* Definindo uma altura fixa para o card */
+        overflow-y: auto;
+        /* Habilitando o scroll vertical dentro do card */
 
-h1 {
-  font-size: 2rem;
-  color: #333;
-}
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
 
-.auth-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  padding: 2rem 3rem;
-  text-align: center;
-  width: 100%;
-  max-width: 400px;
-  height: 500px; /* Definindo uma altura fixa para o card */
-  overflow-y: auto; /* Habilitando o scroll vertical dentro do card */
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+            text-align: left;
+        }
 
-  h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-  }
+        input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
 
-  label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: #333;
-      text-align: left;
-  }
+            &:focus {
+                border-color: #2575fc;
+                outline: none;
+            }
+        }
 
-  input {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      background-color: #f9f9f9;
-      transition: border-color 0.3s ease;
+        .checkbox-label {
+            display: ruby-base;
+            /* Mudado de flex para inline-flex para manter o texto em linha */
+            align-items: center;
+            /* Garante que o checkbox e o texto fiquem alinhados verticalmente */
+            font-size: 0.9rem;
+            color: #666;
+            text-align: left;
+            margin-bottom: 1rem;
+            margin-left: -264px;
 
-      &:focus {
-          border-color: #2575fc;
-          outline: none;
-      }
-  }
+            a {
+                color: #2575fc;
+                text-decoration: none;
+            }
 
-  .checkbox-label {
-      display: ruby-base;  /* Mudado de flex para inline-flex para manter o texto em linha */
-      align-items: center;   /* Garante que o checkbox e o texto fiquem alinhados verticalmente */
-      font-size: 0.9rem;
-      color: #666;
-      text-align: left;
-      margin-bottom: 1rem;
-      margin-left: -264px;
+            input[type='checkbox'] {
+                margin-right: -136px;
+                /* Espaço entre o checkbox e o texto */
+            }
+        }
 
-      a {
-          color: #2575fc;
-          text-decoration: none;
-      }
+        button {
+            padding: 1rem;
+            font-size: 1rem;
+            width: 100%;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
 
-      input[type='checkbox'] {
-          margin-right: -136px;  /* Espaço entre o checkbox e o texto */
-      }
-  }
+            &:hover {
+                background: #1b5ec5;
+            }
 
-  button {
-      padding: 1rem;
-      font-size: 1rem;
-      width: 100%;
-      background: #2575fc;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-
-      &:hover {
-          background: #1b5ec5;
-      }
-
-      &:disabled {
-          background: #ddd;
-          cursor: not-allowed;
-      }
-  }
+            &:disabled {
+                background: #ddd;
+                cursor: not-allowed;
+            }
+        }
+    }
 }

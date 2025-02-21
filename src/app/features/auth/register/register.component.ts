@@ -14,6 +14,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+  isLoading = false; // Estado para controlar o loading spinner
   registerForm: FormGroup;
   isSubmitting: boolean = false;
 
@@ -37,8 +38,8 @@ export class RegisterComponent {
       console.warn('Formulário inválido. Verifique os dados.');
       return;
     }
-
     this.isSubmitting = true;
+    this.isLoading = true; // Ativa o loading
     try {
       const dados = this.registerForm.value;
 
@@ -50,6 +51,7 @@ export class RegisterComponent {
       alert(`Erro ao registrar: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
     } finally {
       this.isSubmitting = false;
+      this.isLoading = false; // Desativa o loading
     }
   }
 }

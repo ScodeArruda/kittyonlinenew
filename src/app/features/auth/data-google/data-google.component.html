@@ -1,0 +1,73 @@
+<!-- <ng-template #modalTemplate>
+    <div class="modal-container">
+        <h2>Complete seu cadastro</h2>
+        <p>Precisamos de mais algumas informações para finalizar seu registro.</p>
+
+        <form [formGroup]="preencherForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome" placeholder="Digite seu nome" />
+                <mat-error *ngIf="preencherForm.get('nome')?.invalid">Nome obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Sobrenome</mat-label>
+                <input matInput formControlName="sobrenome" placeholder="Digite seu sobrenome" />
+                <mat-error *ngIf="preencherForm.get('sobrenome')?.invalid">Sobrenome obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput formControlName="cpf" placeholder="Apenas números" maxlength="11" mask="000.000.000-00" />
+                <mat-error *ngIf="preencherForm.get('cpf')?.invalid">CPF inválido</mat-error>
+            </mat-form-field>
+
+            <mat-checkbox formControlName="termoAceito">
+                Aceito os termos e condições
+            </mat-checkbox>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="preencherForm.invalid">
+                Salvar
+            </button>
+        </form>
+    </div>
+</ng-template> -->
+<!-- <div class="modal-backdrop"></div> -->
+<div class="modal-container">
+    <h2>Complete seu cadastro</h2>
+    <p>Precisamos de mais algumas informações para finalizar seu registro e seguir com a sua doação.</p>
+
+    <form [formGroup]="preencherForm" (ngSubmit)="onSubmit()">
+        <!-- Nome -->
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" placeholder="Digite seu nome" />
+            <mat-error *ngIf="preencherForm.get('nome')?.invalid">Nome obrigatório</mat-error>
+        </mat-form-field>
+
+        <!-- Sobrenome -->
+        <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput formControlName="sobrenome" placeholder="Digite seu sobrenome" />
+            <mat-error *ngIf="preencherForm.get('sobrenome')?.invalid">Sobrenome obrigatório</mat-error>
+        </mat-form-field>
+
+        <!-- CPF -->
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput formControlName="cpf" placeholder="Apenas números" maxlength="11" mask="000.000.000-00" />
+            <mat-error *ngIf="preencherForm.get('cpf')?.invalid">CPF inválido</mat-error>
+        </mat-form-field>
+
+        <!-- Checkbox -->
+        <mat-checkbox formControlName="termoAceito">
+            Aceito os
+            <a href="/termo" target="_blank">Termos</a>
+        </mat-checkbox>
+
+        <!-- Botão de envio -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="preencherForm.invalid">
+            Salvar
+        </button>
+    </form>
+</div>

@@ -5,6 +5,10 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { NgModule } from '@angular/core';
 import { TermoComponent } from './features/auth/termo/termo.component';
 import { HomeComponent } from './features/auth/home/home.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { DataGoogleComponent } from './features/auth/data-google/data-google.component';
+import { MidiasComponent } from './features/auth/home/midias/midias.component';
+import { DonationComponent } from './features/auth/home/donation/donation.component';
 
 export const routes: Routes = [
     {
@@ -28,9 +32,24 @@ export const routes: Routes = [
         path: 'termo',
         component: TermoComponent
     },
+    // {
+    //     path: 'data-google',
+    //     component: DataGoogleComponent,
+    // },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'campaign',
+        component: MidiasComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'donation',
+        component: DonationComponent,
+        canActivate: [AuthGuard]
     },
 ];
 

@@ -1,7 +1,7 @@
 <div class="cadastro-container">
     <div class="auth-card">
         <h1>Cadastro</h1>
-        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <form *ngIf="!isLoading" [formGroup]="registerForm" (ngSubmit)="registerUser()">
             <label for="nome">Nome</label>
             <input type="text" id="nome" formControlName="nome" placeholder="Digite seu nome" />
 
@@ -19,14 +19,20 @@
 
             <!-- Checkbox para aceitar os termos de uso -->
             <label class="checkbox-label">
-                <input type="checkbox" formControlName="termoAceito" /> 
+                <input type="checkbox" formControlName="termoAceito" />
                 Aceito os
-                <a href="/termo" target="_blank">Termos de Uso</a>
+                <a href="/termo" target="_blank">Termos</a>
             </label>
 
 
             <button type="submit"
                 [disabled]="registerForm.invalid || !registerForm.get('termoAceito')?.value">Cadastrar</button>
         </form>
+
+        <!-- Loading spinner -->
+        <div *ngIf="isLoading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Carregando...</p>
+        </div>
     </div>
 </div>
