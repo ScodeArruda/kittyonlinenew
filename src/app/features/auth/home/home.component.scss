@@ -1,0 +1,170 @@
+.home-container {
+    .nav-bar {
+      background-color: #4608f0;
+      padding: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+  
+      ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+  
+        li {
+          color: #ffffff;
+          cursor: pointer;
+          font-size: 16px;
+          transition: 0.3s;
+  
+          &:hover,
+          &.active {
+            color: #38bdf8;
+            font-weight: bold;
+            border-bottom: 2px solid #38bdf8;
+          }
+        }
+      }
+  
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .ul-button {
+        background: linear-gradient(135deg, #450a84, #2575fc);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 16px 18px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease;
+        margin-left: auto;
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        &:hover {
+          background-position: 100% 50%;
+          transition: background-position 1s ease;
+        }
+  
+        &:hover {
+          color: #38025e;
+        }
+      }
+  
+      .logout-button {
+        background: linear-gradient(135deg, #0a8439, #f8fc25);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        border: none;
+        padding: 16px 18px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease;
+        margin-left: auto;
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        &:hover {
+          background-position: 100% 50%;
+          transition: background-position 1s ease;
+        }
+  
+        &:hover {
+          color: #38025e;
+        }
+      }
+
+      .saudation {
+        background: linear-gradient(135deg, #bc6a1d, #4608f0);
+        padding: 16px 18px;
+        border-radius: 8px;
+        color: #fff;
+      }
+  
+      .hamburger {
+        display: none;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        margin-left: auto;
+      }
+    }
+  
+    /* Estilos para telas menores */
+    @media (max-width: 768px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+  
+      ul {
+        display: none; /* Inicialmente o menu estará oculto */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+      }
+  
+      ul.show {
+        display: flex; /* Exibe o menu quando a classe "show" for aplicada */
+      }
+  
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+  
+      .logout-button {
+        width: 100%;
+        margin-top: 4vh;
+      }
+
+      .ul-button {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .saudation {
+        width: 100%;
+      }
+  
+      .hamburger {
+        display: block; /* Exibe o ícone de hambúrguer em telas pequenas */
+      }
+    }
+  
+    /* Estilos para telas pequenas (mobile) */
+    @media (max-width: 480px) {
+    //   .logout-button {
+    //     font-size: 12px;
+    //     padding: 6px 12px;
+    //   }
+  
+      h1 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  

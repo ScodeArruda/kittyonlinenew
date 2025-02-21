@@ -41,32 +41,5 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
 }
-
-/* Garanta que o html e body ocupem a tela toda */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-/* Estilo global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  font-size: 2rem;
-  color: #333;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

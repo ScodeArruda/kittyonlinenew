@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="home-container">
+    <!-- Navbar -->
+    <nav class="nav-bar">
+        <ul>
+            <button class="saudation">{{ saudacao }}</button>
+            <button class="ul-button" (click)="setActiveTab('campaign')" [class.active]="activeTab === 'campaign'">Campanha</button>
+            <button class="ul-button" (click)="setActiveTab('donation')" [class.active]="activeTab === 'donation'">Faça sua Doação</button>
+            <button class="ul-button" (click)="setActiveTab('dados-user')" [class.active]="activeTab === 'dados-user'">Dados do Usuário</button>
+        </ul>
+        <button class="logout-button" (click)="_logout()">Logout</button>
+    </nav>
+
+    <!-- Conteúdo Dinâmico -->
+    <div class="tab-content">
+        <app-midias *ngIf="activeTab === 'campaign'"></app-midias>
+        <app-donation *ngIf="activeTab === 'donation'"></app-donation>
+        <app-dados-user *ngIf="activeTab === 'dados-user'"></app-dados-user>
+    </div>
+</div>

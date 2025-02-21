@@ -1,9 +1,3 @@
-/* Definindo o fundo para cobrir toda a tela */
-html, body {
-    height: 100%;
-    margin: 0;  /* Removendo margens padrões */
-  }
-  
   .auth-page {
     display: flex;
     justify-content: center;
@@ -49,8 +43,13 @@ html, body {
           transition: all 0.3s ease;
   
           &.login-btn {
-            background: #2575fc;
+            background: linear-gradient(135deg, #450a84, #2575fc);
+            transition: color 0.3s ease;
             color: white;
+            &:hover {
+              background-position: 100% 50%; /* Muda a posição para criar o movimento */
+              transition: background-position 1s ease; /* Controle da transição da posição */
+            }
             &:hover {
               background: #1b5ec5;
             }

@@ -1,0 +1,106 @@
+.doacao-container {
+    text-align: center;
+    // margin-top: 7rem;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 600px; /* Define um limite máximo de largura para o container */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o container */
+}
+
+.doacao-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    /* Controlando a largura do título */
+    max-width: 90%; /* Limita a largura do título */
+    word-wrap: break-word; /* Quebra a linha caso o texto ultrapasse a largura */
+}
+
+.doacao-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 90%; /* Limita a largura do texto */
+    word-wrap: break-word; /* Quebra a linha para textos longos */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o texto */
+}
+
+.doacao-btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    outline: none;
+    border: none;
+    animation: colorLoop 3s infinite linear, pulse 2s infinite ease-in-out;
+    transition: transform 0.3s ease-in-out, background 0.3s ease;
+    max-width: 100%; /* Botão ocupa toda a largura disponível */
+    width: 100%; /* Garante que o botão se ajuste corretamente */
+}
+
+@keyframes colorLoop {
+    0% {
+        background: #4608f0; /* Roxo */
+    }
+
+    25% {
+        background: #ff7300; /* Laranja */
+    }
+
+    50% {
+        background: #ffd700; /* Amarelo */
+    }
+
+    75% {
+        background: #ff7300; /* Laranja */
+    }
+
+    100% {
+        background: #4608f0; /* Roxo */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 115, 0, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 480px) {
+    .doacao-container {
+        margin-top: 1rem !important; /* Ajuste para o top margin */
+        padding: 0 1rem; /* Menor padding */
+    }
+
+    .doacao-title {
+        font-size: 1.5rem;
+        max-width: 95%; /* Largura do título mais ajustada */
+    }
+
+    .doacao-text {
+        font-size: 1rem;
+        max-width: 95%; /* Ajuste a largura do texto */
+    }
+
+    .doacao-btn {
+        font-size: 1.4rem;
+        padding: 1rem 2.5rem;
+        margin-top: 2rem;
+    }
+}
