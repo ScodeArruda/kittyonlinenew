@@ -3,7 +3,7 @@
     <div class="user-details" *ngIf="userData?.nome || isGoogleLogin; else loading">
         <p *ngIf="userData?.nome"><strong>Nome:</strong> {{ userData?.nome }} {{ userData?.sobrenome }}</p>
         
-        <p *ngIf="isGoogleLogin && userData?.email"><strong>Email do Google:</strong> {{ emailUsuario }}</p>
+        <p *ngIf="isGoogleLogin && !userData?.email"><strong>Email do Google:</strong> {{ emailUsuario }}</p>
 
         <p *ngIf="!isGoogleLogin && userData?.email"><strong>Email cadastrado:</strong> {{ userData?.email }}</p>
 

@@ -2,7 +2,7 @@
     <!-- Navbar -->
     <nav class="nav-bar">
         <ul>
-            <button class="saudation">{{ saudacao }}</button>
+            <button class="saudation">{{ saudacao || 'Visitante' }}</button>
             <button class="ul-button" (click)="setActiveTab('campaign')" [class.active]="activeTab === 'campaign'">Campanha</button>
             <button class="ul-button" (click)="setActiveTab('donation')" [class.active]="activeTab === 'donation'">Faça sua Doação</button>
             <button class="ul-button" (click)="setActiveTab('dados-user')" [class.active]="activeTab === 'dados-user'">Dados do Usuário</button>

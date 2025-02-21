@@ -23,22 +23,26 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     try {
-          // Aguardar a autenticação ser restaurada (se necessário)
-          const user = await this.waitForUserAuthState();
-      
-          if (user) {
-            // O usuário está autenticado
-            this.usuario = await this._authService.getUserData();
-            this.saudacao = this.calcularSaudacao();
-          } else {
-            // Se o usuário não está autenticado, redireciona para o login
-            console.log('Usuário não autenticado');
-          }
-        } catch (error) {
-          console.error('Erro ao carregar dados do usuário:', error);
-          Swal.fire('Erro!', 'Não foi possível carregar seus dados. Tente novamente.', 'error');
-        }
+      // Aguardar a autenticação ser restaurada (se necessário)
+      const user = await this.waitForUserAuthState();
+  
+      if (user) {
+        // O usuário está autenticado, tenta buscar os dados do Firebase
+        this.usuario = await this._authService.getUserData();
+        console.log('Dados do usuário:', this.usuario);
+      } else {
+        console.log('Usuário não autenticado');
+        this.usuario = null; // Define como null para garantir o comportamento correto
+      }
+  
+      // Define a saudação corretamente, considerando usuário autenticado ou não
+      this.saudacao = this.calcularSaudacao();
+    } catch (error) {
+      console.error('Erro ao carregar dados do usuário:', error);
+      Swal.fire('Erro!', 'Não foi possível carregar seus dados. Tente novamente.', 'error');
+    }
   }
+  
 
    // Método para aguardar a restauração do estado de autenticação do Firebase
    private waitForUserAuthState(): Promise<any> {
@@ -58,7 +62,7 @@ export class HomeComponent implements OnInit {
   calcularSaudacao(): string {
     const hora = new Date().getHours(); // Obtém a hora atual
     let saudacao = '';
-
+  
     if (hora >= 5 && hora < 12) {
       saudacao = 'Bom dia';
     } else if (hora >= 12 && hora < 18) {
@@ -66,10 +70,11 @@ export class HomeComponent implements OnInit {
     } else {
       saudacao = 'Boa noite';
     }
-
-    // Personaliza a saudação com o nome do usuário
-    return `${saudacao}, ${this.usuario ? this.usuario?.nome : 'Visitante'}.`;
-  }
+  
+    // Personaliza a saudação com o nome do usuário ou 'Visitante'
+    const nomeUsuario = this.usuario?.nome?.trim() ? this.usuario.nome : 'Visitante';
+    return `${saudacao}, ${nomeUsuario}.`;
+  }  
   
 
   setActiveTab(tab: string) {

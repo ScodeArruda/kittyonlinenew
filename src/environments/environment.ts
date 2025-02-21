@@ -6,7 +6,7 @@ export const environment = {
     projectId: "kitty-online-new",
     storageBucket: "kitty-online-new.firebasestorage.app",
     messagingSenderId: "398376108532",
-    appId: "1:398376108532:web:970d19d3ecafd99b64b9a1"
+    appId: "1:398376108532:web:64bc8dc8bea3372864b9a1"
   },
   production: false
 };
